@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { DuoBoost, EloBoost, Home, Md10 } from './pages';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={ <Home/> } />
+        <Route path="/elo-boost" element={ <EloBoost/> } />
+        <Route path="/duo-boost" element={ <DuoBoost/> } />
+        <Route path="/md10" element={ <Md10/> } />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
