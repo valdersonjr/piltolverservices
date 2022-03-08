@@ -1,17 +1,14 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { ButtonAppBar } from '../../components';
 
-class Duoboost extends Component {
-    render(){
-        return(
-            <div>
-                DuoBoost Pag
-                <nav>
-                    <Link to="/"> Home </Link>
-                </nav>
-            </div>
-        )
-    }
+class DuoBoost extends Component {
+	render() {
+		return (
+			<div>
+				<ButtonAppBar />
+			</div>
+		);
+	}
 }
 
-export default Duoboost;
+export default DuoBoost;

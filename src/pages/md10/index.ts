@@ -1,1 +1,0 @@
-export { default as Md10 } from './Md10';

@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import { ButtonAppBar } from '../../components';
+//import { Link } from 'react-router-dom';
 
-class EloBoost extends Component {
+class Classificatorias extends Component {
 	render() {
 		return (
 			<div>
@@ -11,4 +12,4 @@ class EloBoost extends Component {
 	}
 }
 
-export default EloBoost;
+export default Classificatorias;

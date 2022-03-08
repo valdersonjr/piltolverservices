@@ -1,21 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { DuoBoost, EloBoost, Home, Md10 } from './pages';
+import { DuoBoost, EloBoost, Home, Classificatorias } from './pages';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={ <Home/> } />
-        <Route path="/elo-boost" element={ <EloBoost/> } />
-        <Route path="/duo-boost" element={ <DuoBoost/> } />
-        <Route path="/md10" element={ <Md10/> } />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/elo-boost" element={<EloBoost />} />
+				<Route path="/duo-boost" element={<DuoBoost />} />
+				<Route path="/classificatoria" element={<Classificatorias />} />
+			</Routes>
+		</BrowserRouter>
+	</React.StrictMode>,
+	document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
