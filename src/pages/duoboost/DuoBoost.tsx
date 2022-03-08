@@ -1,11 +1,12 @@
 import { Component } from 'react';
-import { ButtonAppBar } from '../../components';
+import { AppBar, CopyRight } from '../../components';
 
 class DuoBoost extends Component {
 	render() {
 		return (
 			<div>
-				<ButtonAppBar />
+				<AppBar />
+				<CopyRight />
 			</div>
 		);
 	}

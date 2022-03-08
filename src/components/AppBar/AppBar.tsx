@@ -8,10 +8,11 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/styles';
+import Container from '@mui/material/Container';
 
 const useStyles = makeStyles({
 	menuNavLinks: {
-		padding: '0px 10px',
+		padding: '10px',
 		textDecoration: 'none',
 		color: 'white',
 	},
@@ -37,7 +38,7 @@ export default function ButtonAppBar() {
 						<MenuIcon />
 					</IconButton>
 					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-						<Box sx={{ paddingLeft: 90 }}>
+						<Box sx={{ paddingLeft: 1 }}>
 							<Link className={classes.menuNavLinks} to="/">
 								Home
 							</Link>
@@ -47,7 +48,7 @@ export default function ButtonAppBar() {
 							<Link className={classes.menuNavLinks} to="/duo-boost">
 								Duo Boost
 							</Link>
-							<Link className={classes.menuNavLinks} to="classificatoria">
+							<Link className={classes.menuNavLinks} to="/classificatoria">
 								Classificatoria
 							</Link>
 						</Box>

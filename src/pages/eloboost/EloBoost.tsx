@@ -1,11 +1,12 @@
 import { Component } from 'react';
-import { ButtonAppBar } from '../../components';
+import { AppBar, PrecoServicos } from '../../components';
 
 class EloBoost extends Component {
 	render() {
 		return (
 			<div>
-				<ButtonAppBar />
+				<AppBar />
+				<PrecoServicos />
 			</div>
 		);
 	}
