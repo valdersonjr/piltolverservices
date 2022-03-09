@@ -6,7 +6,8 @@ class EloBoost extends Component {
 		return (
 			<div>
 				<AppBar />
-				<PrecoServicos />
+				<PrecoServicos nome="Elo Boost" />
+				<CopyRight />
 			</div>
 		);
 	}

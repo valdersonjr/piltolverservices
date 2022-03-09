@@ -3,44 +3,68 @@ import { Selection } from './index';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Grid from '@mui/material/Grid';
-import { CopyRight } from '../CopyRight';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
+import { makeStyles } from '@material-ui/styles';
 
 const listaServer: string[] = ['BR', 'LAS'];
+const tierList: string[] = ['I', 'II', 'III', 'IV'];
 
-const tiers = [
-	{
-		title: 'Free',
-		price: '0',
-		description: [
-			'10 users included',
-			'2 GB of storage',
-			'Help center access',
-			'Email support',
-		],
-		buttonText: 'eawd',
-		buttonVariant: 'outlined',
-	},
-
-	{
-		title: 'Free',
-		price: '0',
-		description: [
-			'10 users included',
-			'2 GB of storage',
-			'Help center access',
-			'Email support',
-		],
-		buttonText: 'eawd',
-		buttonVariant: 'outlined',
-	},
+const eloList: string[] = [
+	'Challenger',
+	'Grão Mestre',
+	'Mestre',
+	'Diamante',
+	'Platina',
+	'Gold',
+	'Prata',
+	'Bronze',
+	'Ferro',
 ];
 
-function PricingContent() {
+const imageList: string[] = [
+	require('../../assets//elos/challengerElo.png'),
+	require('../../assets//elos/grandmasterElo.png'),
+	require('../../assets//elos/masterElo.png'),
+	require('../../assets//elos/diamondElo.png'),
+	require('../../assets//elos/platinumElo.png'),
+	require('../../assets//elos/goldElo.png'),
+	require('../../assets//elos/silverElo.png'),
+	require('../../assets//elos/bronzeElo.png'),
+	require('../../assets//elos/ironElo.png'),
+];
+
+const useStyle = makeStyles({
+	cardzin: {
+		height: 400,
+	},
+	imgElo: {
+		display: 'block',
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		paddingTop: 4,
+		paddingBottom: 25,
+	},
+	imgDianna: {
+		display: 'block',
+		width: 200,
+		marginLeft: 'auto',
+		marginRight: 'auto',
+		paddingTop: 35,
+		paddingBottom: 21,
+	},
+});
+
+interface Props {
+	nome: string;
+}
+
+export default function PricingContent({ nome }: Props) {
+	const classes = useStyle();
+
 	return (
 		<React.Fragment>
 			<GlobalStyles
@@ -61,7 +85,7 @@ function PricingContent() {
 					color="text.primary"
 					gutterBottom
 				>
-					Elo Boost
+					{nome}
 				</Typography>
 				<Typography
 					variant="h6"
@@ -79,29 +103,49 @@ function PricingContent() {
 				<Grid container spacing={5} alignItems="flex-end">
 					<Grid item md={4}>
 						<Card>
-							<CardContent>
+							<CardContent className={classes.cardzin}>
 								<Typography variant="h6" align="center">
 									Escolha sua região:
 								</Typography>
 								<Box sx={{ paddingLeft: 2, paddingBottom: 2 }}>
 									<img
-										width="200px"
+										className={classes.imgDianna}
 										alt="dianna chibi"
 										src={require('../../assets/diannaChibi.png')}
 									/>
 								</Box>
-								<Selection opcoes={listaServer} />
+								<Selection nome="Servidor" opcoes={listaServer} />
 							</CardContent>
 						</Card>
 					</Grid>
-					{tiers.map((tier) => (
-						// Enterprise card is full width at sm breakpoint
-						<Grid item md={4}>
-							<Card>
-								<CardContent>{tier.title}</CardContent>
-							</Card>
-						</Grid>
-					))}
+					<Grid item md={4}>
+						<Card>
+							<CardContent className={classes.cardzin}>
+								<img
+									className={classes.imgElo}
+									width="180px"
+									alt="elo"
+									src={imageList[1]}
+								/>
+								<Selection nome="Elo" opcoes={eloList} />
+								<Selection nome="Tier" opcoes={tierList} />
+							</CardContent>
+						</Card>
+					</Grid>
+					<Grid item md={4}>
+						<Card>
+							<CardContent className={classes.cardzin}>
+								<img
+									className={classes.imgElo}
+									width="180px"
+									alt="elo"
+									src={imageList[0]}
+								/>
+								<Selection nome="Elo" opcoes={eloList} />
+								<Selection nome="Tier" opcoes={tierList} />
+							</CardContent>
+						</Card>
+					</Grid>
 				</Grid>
 			</Container>
 
@@ -114,14 +158,8 @@ function PricingContent() {
 					mt: 8,
 					py: [3, 6],
 				}}
-			>
-				<CopyRight />
-			</Container>
+			></Container>
 			{/* End footer */}
 		</React.Fragment>
 	);
-}
-
-export default function PrecoServicos() {
-	return <PricingContent />;
 }

@@ -1,15 +1,16 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
+import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 interface Props {
 	opcoes: string[];
+	nome: string;
 }
 
-export default function Selection({ opcoes }: Props) {
+export default function Selection({ opcoes, nome }: Props) {
 	const [server, setServer] = React.useState('');
 
 	const handleChange = (event: SelectChangeEvent) => {
@@ -19,7 +20,7 @@ export default function Selection({ opcoes }: Props) {
 	return (
 		<Box sx={{ minWidth: 120 }}>
 			<FormControl fullWidth color="primary" margin="dense">
-				<InputLabel id="demo-simple-select-label">Servidor</InputLabel>
+				<InputLabel id="demo-simple-select-label">{nome}</InputLabel>
 
 				<Select
 					labelId="demo-simple-select-label"
