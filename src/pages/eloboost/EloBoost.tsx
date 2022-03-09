@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { AppBar, PrecoServicos } from '../../components';
+import { AppBar, CopyRight, PrecoServicos } from '../../components';
 
 class EloBoost extends Component {
 	render() {

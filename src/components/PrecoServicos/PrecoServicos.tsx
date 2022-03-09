@@ -1,53 +1,16 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import StarIcon from '@mui/icons-material/StarBorder';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import GlobalStyles from '@mui/material/GlobalStyles';
-import Container from '@mui/material/Container';
-import { CopyRight } from '../CopyRight';
 import { Selection } from './index';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Grid from '@mui/material/Grid';
+import { CopyRight } from '../CopyRight';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
+import CardContent from '@mui/material/CardContent';
+import CssBaseline from '@mui/material/CssBaseline';
+import GlobalStyles from '@mui/material/GlobalStyles';
 
 const listaServer: string[] = ['BR', 'LAS'];
-
-const opcoesElo = [
-	{
-		elo: 'Challenger',
-	},
-	{
-		elo: 'Grão Mestre',
-	},
-	{
-		elo: 'Mestre',
-	},
-	{
-		elo: 'Diamante',
-	},
-	{
-		elo: 'Platina',
-	},
-	{
-		elo: 'Gold',
-	},
-	{
-		elo: 'Prata',
-	},
-	{
-		elo: 'Bronze',
-	},
-	{
-		elo: 'Ferro',
-	},
-];
 
 const tiers = [
 	{
@@ -120,14 +83,14 @@ function PricingContent() {
 								<Typography variant="h6" align="center">
 									Escolha sua região:
 								</Typography>
-								<Box sx={{ paddingBottom: 2 }}>
+								<Box sx={{ paddingLeft: 2, paddingBottom: 2 }}>
 									<img
 										width="200px"
 										alt="dianna chibi"
 										src={require('../../assets/diannaChibi.png')}
 									/>
 								</Box>
-								<Selection />
+								<Selection opcoes={listaServer} />
 							</CardContent>
 						</Card>
 					</Grid>

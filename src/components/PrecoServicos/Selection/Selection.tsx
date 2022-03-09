@@ -5,11 +5,15 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export default function Selection() {
-	const [server, setAge] = React.useState('');
+interface Props {
+	opcoes: string[];
+}
+
+export default function Selection({ opcoes }: Props) {
+	const [server, setServer] = React.useState('');
 
 	const handleChange = (event: SelectChangeEvent) => {
-		setAge(event.target.value as string);
+		setServer(event.target.value as string);
 	};
 
 	return (
@@ -24,9 +28,9 @@ export default function Selection() {
 					label="Age"
 					onChange={handleChange}
 				>
-					{/*opcao.map((opcaoAi: string, index) => (
-						<MenuItem value={index}> {opcaoAi} </MenuItem>
-					))*/}
+					{opcoes.map((opcao, index) => (
+						<MenuItem value={index}> {opcao} </MenuItem>
+					))}
 				</Select>
 			</FormControl>
 		</Box>
